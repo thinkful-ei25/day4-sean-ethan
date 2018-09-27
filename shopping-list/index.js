@@ -1,14 +1,8 @@
 'use strict';
 
-console.log('pizza'); 
+//console.log('pizza'); 
 
-$('.shopping-list').click(function(event){ 
-  //event.preventDefault(); 
-  // eslint-disable-next-line no-console
-  console.log('clicked button!'); 
-  //$(event.target).addClass('shopping-item-checked'); 
-  //$(this.)
-}); 
+
 /*eslint-env jquery*/
 function addList(){
   $('#js-shopping-list-form').submit(event => {
@@ -36,10 +30,21 @@ function addList(){
 }
 
 function check(){ 
-  
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event){ 
+
+    $(event.currentTarget).closest('li').find('.shopping-item').addClass('shopping-item__checked'); 
+  }); 
+}
+
+function deleteLI(){ 
+  $('.shopping-list').on('click', '.shopping-item-delete', function(event){ 
+    $(event.currentTarget).closest('li').remove(); 
+  }); 
 }
 
 addList();
-//$(check()); 
+check(); 
+deleteLI(); 
+
 
 console.log('pizza'); 
