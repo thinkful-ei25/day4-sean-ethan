@@ -4,15 +4,17 @@
 /*eslint-env jquery*/
 // When DOM is ready:
 $(() => {
-  console.log('hi'); 
+  //console.log('hi'); 
   createAndPlaceRows(8);
-  $('.cell').hover(function(event){
+  $('.grid').on('mouseover', '.cell', function(event){
+    console.log('hello');
     $(event.currentTarget).addClass('active');  
     //console.log(event.currentTarget); 
   }); 
 
   $('button').click(function(){ 
-    createAndPlaceRows(8); location.reload(); 
+    createAndPlaceRows(8); 
+    //location.reload(); 
   });  
   //$('button').click(a => console.log('what??!')); 
   // Bind your event listeners here:

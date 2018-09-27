@@ -5,7 +5,7 @@
 
 /*eslint-env jquery*/
 function addList(){
-  $('#js-shopping-list-form').submit(event => {
+  $('#js-shopping-list-form').submit(function(event) {
     event.preventDefault();
     let newInfo = $('input').val();
 
@@ -31,8 +31,8 @@ function addList(){
 
 function check(){ 
   $('.shopping-list').on('click', '.shopping-item-toggle', function(event){ 
-
-    $(event.currentTarget).closest('li').find('.shopping-item').addClass('shopping-item__checked'); 
+    //console.log($(this).parent().parent());
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked'); 
   }); 
 }
 
